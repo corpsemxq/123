@@ -33,7 +33,7 @@ public class ClassPathXmlApplicationContext implements BeanFactory{
 				String methodName = "set"+name.substring(0,1).toUpperCase()+name.substring(1);
 				System.out.println("method name = "+ methodName);
 				
-				Method m = o.getClass().getMethod(methodName, beanObject.getClass().getInterfaces()[0]);
+				Method m = o.getClass().getMethod(methodName, beanObject.getClass().getInterfaces());
 				m.invoke(o, beanObject);
 			}
 		}

@@ -8,9 +8,13 @@ public class UserDAOImpl3 implements UserDAO {
 	
 	private UserDAO userDAO= new UserDAOImpl();
 	public void save(User u) {
-		new LogInterceptor().beforeMethod();
+		new LogInterceptor().beforeMethod(null);
 		userDAO.save(u);
 
+	}
+	
+	public void delete(){
+		System.out.println("deleted"); 
 	}
 
 }
